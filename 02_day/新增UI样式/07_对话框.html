@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 300px;
+				height: 200px;
+				border: 1px solid;
+				position: relative;
+				border-radius: 50%;
+				line-height: 200px;
+				text-align: center;
+			}
+			#wrap::before{
+				content: "";
+				display: block;
+				width: 80px;
+				height: 80px;
+				border: 1px solid;
+				position: absolute;
+				bottom: -60px;
+				right: -60px;
+				border-radius: 50%;
+			}
+			#wrap::after{
+				content: "";
+				display: block;
+				width: 60px;
+				height: 60px;
+				border: 1px solid;
+				position: absolute;
+				bottom: -110px;
+				right: -110px;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			新策科技
+		</div>
+	</body>
+</html>

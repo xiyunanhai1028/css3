@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				height: 80px;
+				background: rgba(0,0,0,.3);
+				position: relative;
+			}
+			img{
+				margin: 10px 0 0 10px;
+			}
+			#bg{
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				background: url(./imgs/a.jpg) no-repeat;
+				background-size: 100% 100%;
+				z-index: -1;
+				filter: blur(4px);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<img src="./imgs/a.jpg" width="64" height="64"/>
+			<div id="bg"></div>
+		</div>
+	</body>
+</html>
