@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+			}
+			#wrap>.inner{
+				height: 100%;
+			}
+			#wrap>.inner>img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				margin: 4px;
+				border-radius: 50%;
+			}
+			#wrap>.home{
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: url(img/home.png);
+				z-index: 1;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				/*transition: 2s;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="inner">
+				<img src="img/clos.png"/>
+				<img src="img/full.png"/>
+				<img src="img/open.png"/>
+				<img src="img/prev.png"/>
+				<img src="img/refresh.png"/>
+			</div>
+			<div class="home"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var home=document.querySelector("#wrap>.home")
+			var imgs=document.querySelectorAll("#wrap>.inner>img")
+			var flag=true;
+			var c=140;
+			for (var i = 0; i < imgs.length; i++) {
+				imgs[i].onclick=function(){
+					this.style.transition="1s ";
+					this.style.transform="scale(1.5)";
+					this.style.option=0.2;
+					this.addEventListener("transitionend",function(){
+						this.style.transition="rotate(720deg) 0.3s ";
+						this.style.transform="scale(1)";
+						this.style.option=1;
+					});
+				}
+			}
+			home.onclick=function(){
+				if(flag){
+					home.style.transform="rotate(720deg)";
+					for(var i=0;i<imgs.length;i++){
+						imgs[i].style.transition="1s "+(i*0.15)+"s";
+						imgs[i].style.left=-getPoiont(c,i*90/(imgs.length-1)).left+"px";
+						imgs[i].style.top=-getPoiont(c,i*90/(imgs.length-1)).top+"px";
+						
+					}
+				}else{
+					home.style.transform="rotate(0deg)";
+					for(var i=0;i<imgs.length;i++){
+						imgs[i].style.transition="1s "+((imgs.length-1-i)*0.15)+"s";
+						imgs[i].style.left=0+"px";
+						imgs[i].style.top=0+"px";
+						
+					}
+				}
+				flag=!flag;
+			}
+			
+			//求坐标
+			function getPoiont(c,deg){
+				var x=Math.round(c*Math.sin(deg*Math.PI/180));
+				var y=Math.round(c*Math.cos(deg*Math.PI/180))
+				return {left:x,top:y};
+			}
+		}
+	</script>
+</html>

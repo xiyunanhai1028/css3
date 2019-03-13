@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				width: 300px;
+				height: 300px;
+				border: 1px solid;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			#wrap>.inner{
+				width: 100px;
+				height: 100px;
+				background: pink;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -50px;
+				margin-top: -50px;
+				animation-name: move;
+				animation-duration: 3s;
+				animation-direction: alternate;
+				animation-iteration-count: 3;
+				animation-fill-mode: both;
+				animation-timing-function: linear;
+				animation-delay: 1s;
+			}
+			@keyframes move{
+				from{
+					transform: translateY(-100px);
+				}
+				to{
+					transform: translateY(100px);
+				}
+			}
+			#wrap:hover>.inner{
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="inner">
+				
+			</div>
+		</div>
+	</body>
+</html>
