@@ -1,0 +1,30 @@
+.base,
+#wrap .inner {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+#wrap {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid;
+}
+#wrap .inner:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  background: blue;
+}
+#wrap .inner:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  background: red;
+}

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#wrap {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+  position: relative;
+}
+#wrap .inner {
+  width: 200px;
+  height: 200px;
+  background: #000000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+#wrap .inner2 {
+  width: 100px;
+  height: 100px;
+  background: #ff1493;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
